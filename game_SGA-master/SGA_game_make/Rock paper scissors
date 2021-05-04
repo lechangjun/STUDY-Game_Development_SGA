@@ -1,0 +1,70 @@
+#include <iostream>
+#include <string>
+#include <ctime>
+#include <Windows.h>
+
+using namespace std;
+
+//가위바위보
+int main()
+{
+	srand(size_t(time(NULL)));
+
+	int Player, Com, Win = 0, Lose = 0, Draw = 0;
+	//==============================================
+	while (true)
+	{
+		cout << "1.가위, 2. 바위, 3.보: ";
+		cin >> Player;
+		cout << endl;
+
+		if (Player == 1)
+			cout << "가위를 선택했습니다." << endl;
+		else if (Player == 2)
+			cout << "바위를 선택했습니다." << endl;
+		else if (Player == 3)
+			cout << "보를 선택했습니다." << endl;
+		else
+		{
+			cout << "잘못된 입력입니다." << endl;
+			system("pause");
+			break;
+		}
+		//=====================================================
+		srand(size_t(time(NULL)));
+		Com = rand() % 3 + 1;
+		cout << endl;
+		cout << "========================" << endl;
+
+		if (Com == 1)
+			cout << "컴퓨터는 가위를 냈습니다." << endl << endl;
+		else if (Com == 2)
+			cout << "컴퓨터는 바위를 냈습니다." << endl << endl;
+		else
+			cout << "컴퓨터는 보를 냈습니다." << endl << endl;
+
+		//======================================================
+		if (Player == Com)
+		{
+			cout << "비겼습니다." << endl;
+			Draw++;
+		}
+		else if ((Player == 1 && Com == 3) || (Player == 2 && Com == 1) || (Player == 3 && Com == 2))
+		{
+			cout << "플레이어가 승리했습니다." << endl;
+			Win++;
+		}
+		else
+		{
+			cout << "컴퓨터가 승리하였습니다." << endl;
+			Lose++;
+		}
+		cout << "========================" << endl;
+		//===================================================================
+		cout << "승: " << Win << ", 무승부: " << Draw << ", 패배: " << Lose << endl;
+
+		system("pause");
+		
+	}
+		return 0;
+}
