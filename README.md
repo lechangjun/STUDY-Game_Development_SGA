@@ -1,4 +1,4 @@
-Welcome to the AWS CodeStar sample web application
+게임 개발 마스터가 되기위한 몸부림
 ==================================================
 
 This sample code helps get you started with a simple Go web application deployed by AWS CloudFormation to AWS Lambda and Amazon API Gateway.
