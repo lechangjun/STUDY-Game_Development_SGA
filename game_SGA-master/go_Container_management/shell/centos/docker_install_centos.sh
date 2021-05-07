@@ -28,8 +28,9 @@ else
 echo -e "$red" ""
 fi
 
-#docker engine 작돟하지 않는 경우 특정 버전을 확인하여 설치바람
+#docker engine 작동하지 않는 경우 특정 버전을 확인하여 설치바람
 #sudo yum install docker-ce-<VERSION_STRING> docker-ce-cli-<VERSION_STRING> containerd.io
+
 sudo yum install docker-ce docker-ce-cli containerd.io
 if [ "$?" -eq "0" ]; then
 echo -e "$green" ""
@@ -55,9 +56,8 @@ yum -y upgrade
 #yum install -y https://download.docker.com/linux/centos/7/x86_64/stable/Packages/containerd.io-1.2.13-3.1.el7.x86_64.rpm
 ##sudo systemctl start docker && sudo docker run hello-world
 
-#에러 발생시 
+#퍼미션 에러 발생시 
 #WARNING: Error loading config file: /home/user/.docker/config.json - stat /home/user/.docker/config.json: permission denied
-
 # sudo chown "$USER":"$USER" /home/"$USER"/.docker -R 
 # sudo chmod g+rwx "$HOME/.docker" -R
 
