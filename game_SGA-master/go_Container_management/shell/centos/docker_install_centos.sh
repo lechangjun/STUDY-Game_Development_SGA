@@ -48,6 +48,9 @@ sudo docker run hello-world
 
 
 yum -y upgrade
+
+
+
 #많이 발생하는 오류 
 
 ## 오류 – containerd.io-1.2.10-3.2.el7.x86_64
