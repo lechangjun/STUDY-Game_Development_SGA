@@ -38,5 +38,3 @@ What Do I Do Next?
 ------------------
 
 저작권
-
-Best Practices: https://docs.aws.amazon.com/codestar/latest/userguide/best-practices.html?icmpid=docs_acs_rm_sec
