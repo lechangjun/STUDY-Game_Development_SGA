@@ -27,8 +27,8 @@ Getting Started
             
 3.  게임 (devops)
 
-          $ 미정
-          $ 미정
+          $ Terraform
+          $ ansible
 
 What Do I Do Next?
 ------------------
