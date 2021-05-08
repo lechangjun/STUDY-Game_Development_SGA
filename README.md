@@ -17,7 +17,7 @@ Getting Started
 
 1. 다이렉트 x 게임 개발
    
-          $ 미정
+          $ TEXT_RPG
           $ 미정
 
 2. 서버 프로그래밍 
