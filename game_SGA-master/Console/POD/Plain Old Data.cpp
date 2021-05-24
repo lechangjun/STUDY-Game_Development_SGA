@@ -12,7 +12,7 @@ class NPOD
         buf_ = new char[bufLen+1];  
         memcpy(buf_, other.buf_, bufLen);  
         }  
-    }  
+    };  
   
 NPOD t1, t2;  
 ...  
