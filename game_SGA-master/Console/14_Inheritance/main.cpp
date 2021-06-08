@@ -2,6 +2,7 @@
 #include "Super.h"
 #include "Sub.h"
 
+/// 다중 상속 예시
 class Animal
 {
 public:
