@@ -5,7 +5,7 @@
 2. 게임 서버 공부 (go 언어)  
 3. 게임 ( devops )
 -----------
-학습 내용
+내용
 * SGA (학원) 수업 내용 복습
 * 게임 서버 프로그래밍 
 * 게임 dev ops [ansible + packer (packer hashicorp)]
