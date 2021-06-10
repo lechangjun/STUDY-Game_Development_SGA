@@ -1,0 +1,4 @@
+지우기
+https://blog.realsangil.net/2020/11/docker-container-graceful-shutdown/
+경량화 
+https://thesorauniverse.com/posts/kr/golang/making-golang-docker-img-best-practices/
