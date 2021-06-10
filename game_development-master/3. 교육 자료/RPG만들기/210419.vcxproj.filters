@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="stdafx.cpp" />
+    <ClCompile Include="player.cpp" />
+    <ClCompile Include="enemy.cpp" />
+    <ClCompile Include="Battle.cpp" />
+    <ClCompile Include="store.cpp" />
+    <ClCompile Include="inven.cpp" />
+    <ClCompile Include="item.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="player.h" />
+    <ClInclude Include="enemy.h" />
+    <ClInclude Include="Battle.h" />
+    <ClInclude Include="store.h" />
+    <ClInclude Include="inven.h" />
+    <ClInclude Include="item.h" />
+  </ItemGroup>
+</Project>
