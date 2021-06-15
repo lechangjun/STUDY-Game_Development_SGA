@@ -7,8 +7,7 @@
 -----------
 내용
 * SGA (학원) 수업 내용 복습
-* 게임 서버 프로그래밍 
-* 게임 dev ops [ansible + packer (packer hashicorp)]
+*  게임 dev ops [ansible + packer (packer hashicorp)]
 * Terraform ( aws + azure )
 
 Getting Started
@@ -20,12 +19,8 @@ Getting Started
           $ TEXT_RPG
           $ 미정
 
-2. 서버 프로그래밍 && 유니티 게임 개발
-
-          $ 디아블로
-          $ 배틀그라운드
             
-3.  게임 (devops)
+2.  게임 (devops)
 
           $ Terraform
           $ ansible
