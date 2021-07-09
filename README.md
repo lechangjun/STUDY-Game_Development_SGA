@@ -13,19 +13,17 @@
 Getting Started
 ---------------
 
+## SGA  PORTFOLIO
 
 1. 다이렉트 x 게임 개발
    
-          $ 
-          $ 미정
+           https://github.com/lechangjun/game_collection
 
             
 2.  텍스트 알피지
 
-          $ TEXT_RPG
+           https://github.com/lechangjun/game_collection
 
 
-참고한 사이트
+
 ------------------
-
-저작권
