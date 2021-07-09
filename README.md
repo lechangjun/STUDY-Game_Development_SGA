@@ -10,17 +10,20 @@
 * SGA (학원) 수업 내용 복습
 * 개인 PORTFOLIO 제작(2021 04 19 ~ 2021 11 30)
 
-Getting Started
+
+## Getting Started
 ---------------
 
-## SGA  PORTFOLIO (2021.04.19 ~~ 2021.11.30)
 
-1. 다이렉트 x 게임 개발
+## SGA  PORTFOLIO (2021.04.19 ~~ 2021.11.30)
+PORTFOLIO 정리한    Git_Hub 주소 
+
+* 다이렉트 x 게임 개발
    
            https://github.com/lechangjun/game_collection
 
             
-2.  텍스트 알피지
+*  텍스트 알피지
 
            https://github.com/lechangjun/game_collection
 
