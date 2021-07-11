@@ -31,7 +31,7 @@ PORTFOLIO 정리한    Git_Hub 주소
 
 ---------------------
 
-### 동기들과 자료를 공유하기 위해 생성함 
+### 자료를 공유하기 위해 생성함 
 
 ### SGA 카페
 https://cafe.naver.com/sgagp.cafe?iframe_url=/CafeMemberNetworkView.nhn%3Fm=view%26memberid=aeeeesdf
