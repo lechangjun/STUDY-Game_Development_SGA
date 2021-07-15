@@ -3,6 +3,8 @@
 #include "Objects/Background.h"
 #include "Objects/Bullet.h"
 
+
+
 Background* bg;
 vector<Sprite *> sprites;
 vector<Bullet *>bullets;
