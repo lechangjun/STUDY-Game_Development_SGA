@@ -1,5 +1,5 @@
 #pragma once
-
+/// 수정중 0715
 class Bullet
 {
 public:
