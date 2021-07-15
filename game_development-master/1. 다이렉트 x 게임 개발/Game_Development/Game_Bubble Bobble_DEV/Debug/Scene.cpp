@@ -5,6 +5,8 @@
 
 
 
+
+
 Background* bg;
 vector<Sprite *> sprites;
 vector<Bullet *>bullets;
