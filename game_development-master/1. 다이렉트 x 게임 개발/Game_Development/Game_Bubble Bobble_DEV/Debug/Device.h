@@ -8,6 +8,8 @@ LRESULT CALLBACK WndProc(HWND hWnd,	UINT msg, WPARAM wParam, LPARAM lParam);
 
 ///////////////////////////////////////////////////////////////////////////////
 
+
+
 void InitScene();
 void DestroyScene();
 void Update();
