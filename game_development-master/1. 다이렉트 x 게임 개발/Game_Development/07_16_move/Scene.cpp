@@ -3,6 +3,7 @@
 #include "Objects/Background.h"
 #include "Objects/Bobble.h"
 
+
 #include <time.h>
 
 Background* BackGround;
@@ -42,7 +43,7 @@ D3DXMATRIX V, P;
 
 void Update()
 {
-	//È­»ì °¢µµ ¹Ù²Ş
+	//í™”ì‚´ ê°ë„ ë°”ê¿ˆ
 	if (Key->Press(VK_LEFT) && angleArrow < 45.0f)
 	{
 		angleArrow += 0.01f;
@@ -54,10 +55,10 @@ void Update()
 		Arrow->ToRotationZ(angleArrow);
 	}
 
-	//¹öºí »ı¼º
+	//ë²„ë¸” ìƒì„±
 	if (Key->Down(VK_SPACE))
 	{
-		wstring colorFile; //ÅØ½ºÃÄ ÆÄÀÏÀ» ·£´ıÀ¸·Î ¼±ÅÃ
+		wstring colorFile; //í…ìŠ¤ì³ íŒŒì¼ì„ ëœë¤ìœ¼ë¡œ ì„ íƒ
 		int colorNum;
 
 		if (rand() % 5 == 4)
