@@ -2,6 +2,7 @@
 #include "Bobble.h"
 
 
+
 Bobble::Bobble(wstring textureFile, wstring shaderFile, D3DXVECTOR2 start, float angle, int color)
 	: speed(1.5f), scale(50, 50), color(color)
 {
@@ -31,18 +32,18 @@ void Bobble::Update(D3DXMATRIX & V, D3DXMATRIX & P)
 {
 	position += 0.1 * velocity;
 
-	//¹Ý»çº¤ÅÍ
+	//ë°˜ì‚¬ë²¡í„°
 	if (position.x <= 260 || position.x >= (Width - 260))
 		velocity.x += 2 * (-velocity.x);
 
-	//Ã¹Â°ÁÙ ÃµÀå¿¡ Ãæµ¹½Ã ¸ØÃã
+	//ì²«ì§¸ì¤„ ì²œìž¥ì— ì¶©ëŒì‹œ ë©ˆì¶¤
 	if (position.y >= (Height - 85))
 	{
 		velocity.x = 0;
 		velocity.y = 0;
 	}
 
-	//Ã¹Â°ÁÙ Á¤·Ä
+	//ì²«ì§¸ì¤„ ì •ë ¬
 	if (position.x >= 260 && position.x < 310 && position.y >= 510 && position.y < 515)
 	{
 		position.x = 280;
