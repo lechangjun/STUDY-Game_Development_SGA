@@ -48,6 +48,7 @@ const UINT Height = 768;
 const wstring Textures = L"../_Textures/";
 const wstring Shaders = L"../_Shaders/";
 
+
 extern HWND Hwnd;
 extern wstring Title;
 
