@@ -16,9 +16,11 @@ Status: 게임
 
 ---
 
-**1.Toy Projects **
-## * 07 16  
+## **1.Toy Projects **
+### * 07 16  
 ![image](https://user-images.githubusercontent.com/68671394/125797798-b826cb93-585e-429e-af52-328a6c212ed8.png)
+### * 07 17  
+![image](https://user-images.githubusercontent.com/68671394/126037001-35aa7ca4-c286-42e3-a3e4-291680bda71c.png)
 
 # 아직 미완성임 
 
