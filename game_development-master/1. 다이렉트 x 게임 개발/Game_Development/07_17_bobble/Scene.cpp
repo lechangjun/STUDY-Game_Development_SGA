@@ -8,19 +8,20 @@ Sprite* mach;
 Sprite* aw;
 vector<Bubble*>bubbles;
 
+
 void InitScene()
 {
 	wstring shaderFile = L"../_Shaders/008_Sprite.fx";
 
-	bg = new Background(L"../_Shaders/008_Sprite.fx"); //¹è°æ
+	bg = new Background(L"../_Shaders/008_Sprite.fx"); //ë°°ê²½
 
 	mach = new Sprite(L"../_Textures/PuzzleBobble/PuzzleBobble.png", shaderFile, 8, 713, 84, 759);
-	//±â°è
+	//ê¸°ê³„
 	mach->Position(Width/2, 46);
 	mach->Scale(100, 100);
 
 	aw = new Sprite(L"../_Textures/PuzzleBobble/PuzzleBobble.png", shaderFile, 12, 488, 34, 543);
-	//È­»ì
+	//í™”ì‚´
 	aw->Position(Width/2, 76);
 	aw->Scale(50, 125);
 }
@@ -48,12 +49,12 @@ void Update()
 
 	if (Key->Press(VK_LEFT) && aw->Rotation() < 87.0f)
 		aw->Rotation(aw->Rotation() + 0.05f);
-	//È­»ìÇ¥ È¸Àü(¿ÞÂÊ)
+	//í™”ì‚´í‘œ íšŒì „(ì™¼ìª½)
 	if (Key->Press(VK_RIGHT) && aw->Rotation() > -87.0f)
 		aw->Rotation(aw->Rotation() - 0.05f);
-	//È­»ìÇ¥ È¸Àü(¿À¸¥ÂÊ)
+	//í™”ì‚´í‘œ íšŒì „(ì˜¤ë¥¸ìª½)
 	if (Key->Down(VK_SPACE))
-	{ //¹öºí »ý¼º ¹× ¹ß»ç
+	{ //ë²„ë¸” ìƒì„± ë° ë°œì‚¬
 		wstring file = Shaders + L"008_Sprite.fx";
 
 		float angle = aw->Rotation() + 90;
@@ -75,8 +76,8 @@ void Render()
 	D3DXCOLOR bgColor = D3DXCOLOR(1, 1, 1, 1);
 	DeviceContext->ClearRenderTargetView(RTV, (float*)bgColor);
 	{
-		//»ý¼º ¼ø¼­
-		//¹è°æ->ÀåÄ¡->È­»ìÇ¥->¹öºí
+		//ìƒì„± ìˆœì„œ
+		//ë°°ê²½->ìž¥ì¹˜->í™”ì‚´í‘œ->ë²„ë¸”
 		bg->Render();
 		mach->Render();
 		aw->Render();
