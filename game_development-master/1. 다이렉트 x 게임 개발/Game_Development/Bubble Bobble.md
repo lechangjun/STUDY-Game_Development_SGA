@@ -22,7 +22,7 @@ Status: 게임
 ![image](https://user-images.githubusercontent.com/68671394/125797798-b826cb93-585e-429e-af52-328a6c212ed8.png)
 ### * 07 17  
 ![image](https://user-images.githubusercontent.com/68671394/126037001-35aa7ca4-c286-42e3-a3e4-291680bda71c.png)
-### * 07 17
+### * 07 18
 ![image](https://user-images.githubusercontent.com/68671394/126063934-cfbe6ee8-78b5-4d1b-a155-fbbdc7b1c730.png)
 
 # 아직 미완성임 
