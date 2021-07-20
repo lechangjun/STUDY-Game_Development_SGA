@@ -6,6 +6,7 @@
 #include <vector>
 #include <map>
 #include <functional>
+
 using namespace std;
 
 #include <d3d11.h>
