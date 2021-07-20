@@ -24,9 +24,9 @@ Status: 게임
 ![image](https://user-images.githubusercontent.com/68671394/126037001-35aa7ca4-c286-42e3-a3e4-291680bda71c.png)
 ### * 07 18
 ![image](https://user-images.githubusercontent.com/68671394/126063934-cfbe6ee8-78b5-4d1b-a155-fbbdc7b1c730.png)
-### * 07 19
+### * 07 19 -> 정렬
 클래스 생성 -> CPP, H
-### * 07 20
+### * 07 20 -> 정렬
 Scene.cpp  ->  void InitScene() 수정
 
 # 아직 미완성임 
