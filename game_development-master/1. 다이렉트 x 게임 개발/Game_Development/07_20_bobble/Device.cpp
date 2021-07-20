@@ -3,6 +3,7 @@
 
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nShowCmd)
 {
+	
 	InitWindow(hInstance, nShowCmd);
 	InitDirect3D(hInstance);
 
@@ -11,6 +12,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	Destroy();
 
 	return 0;
+	
 }
 
 
@@ -27,6 +29,7 @@ Time* Timer;
 
 void InitWindow(HINSTANCE hInstance, int ShowWnd)
 {
+	
 	//Register Class
 	{
 		WNDCLASSEX wndClass;
@@ -80,6 +83,7 @@ void InitWindow(HINSTANCE hInstance, int ShowWnd)
 
 	ShowWindow(Hwnd, ShowWnd);
 	UpdateWindow(Hwnd);
+	
 }
 
 void InitDirect3D(HINSTANCE hInstance)
