@@ -14,6 +14,7 @@ bool bpuzzle[7][8] = {};
 
 void InitScene()
 {
+	
 	bg = new Background(L"../_Shaders/008_Sprite.fx");
 
 	wstring shaderFile = L"../_Shaders/008_Sprite.fx";
@@ -53,6 +54,7 @@ void InitScene()
 
 void DestroyScene()
 {
+	
 	for (Bullet* bullet :bullets)
 		SAFE_DELETE(bullet)
 
@@ -60,6 +62,7 @@ void DestroyScene()
 		SAFE_DELETE(sprite);
 
 	SAFE_DELETE(bg);
+	
 }
 
 D3DXMATRIX V, P;
@@ -79,15 +82,18 @@ void Update()
 
 	for (Sprite* sprite : sprites)
 	{
+		
 		//sprite->ViewProjection();
 		sprite->Update(V, P);
+		
 	}
 	
 	
 
-	//bulletÅ°
+	//bulletí‚¤
 	if (Key->Press(VK_LEFT))
 	{
+		
 		sprites[1]->Rotation(sprites[1]->Rotation() + 0.01f);
 
 		if (sprites[1]->Rotation() >= 70.0f)
@@ -111,7 +117,7 @@ void Update()
 	else if (Key->Press(VK_DOWN))
 		position.y -= 200.0f * Timer->Elapsed();*/
 
-	sprites[1]->Position(position);//È­»ì È¸Àü Àû¿ë
+	sprites[1]->Position(position);//í™”ì‚´ íšŒì „ ì ìš©
 
 
 
@@ -137,7 +143,7 @@ void Update()
 
 	for (int i = 0; i < bullets.size(); i++)
 	{
-		if (bullets[i]->Position().y >= Height - 80 - 55 / 2)//1¹øÂ° ÁÙ
+		if (bullets[i]->Position().y >= Height - 80 - 55 / 2)//1ë²ˆì§¸ ì¤„
 		{
 			if (bullets[i]->Position().x > Width / 2 - 55 * 4 && bullets[i]->Position().x < Width / 2 - 55 * 3)
 			{
@@ -186,7 +192,7 @@ void Update()
 			}
 		}
 
-		else if (bullets[i]->Position().y >= Height - 80 - 55 * 1 - 55 / 2)//2¹øÂ° ÁÙ
+		else if (bullets[i]->Position().y >= Height - 80 - 55 * 1 - 55 / 2)//2ë²ˆì§¸ ì¤„
 		{
 			if(bpuzzle[0][0] == true)
 			{ 
@@ -307,8 +313,8 @@ void Update()
 
 }
 
-//Culling ¸éÀ» ¹ö¸² 3D´Ü°è
-//Clipping Á¤Á¡À» ¹ö¸² 2D ´Ü°è
+//Culling ë©´ì„ ë²„ë¦¼ 3Dë‹¨ê³„
+//Clipping ì •ì ì„ ë²„ë¦¼ 2D ë‹¨ê³„
 
 void Render()
 {
