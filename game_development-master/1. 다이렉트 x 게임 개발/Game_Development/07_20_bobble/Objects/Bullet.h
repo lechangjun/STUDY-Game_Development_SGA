@@ -1,5 +1,6 @@
 #pragma once
 
+// 코드 분석 중 
 class Bullet
 {
 public:
