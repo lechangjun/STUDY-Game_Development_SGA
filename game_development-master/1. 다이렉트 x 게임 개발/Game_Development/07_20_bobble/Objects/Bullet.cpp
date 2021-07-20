@@ -1,6 +1,8 @@
 #include "stdafx.h"
 #include "Objects/Bullet.h"
 
+
+// 버블 클래스 -> 비슷
 Bullet::Bullet(wstring shaderFile, D3DXVECTOR2 start, float angle, float speed)
 {
 	sprite = new Sprite(Textures + L"blueBead.png", shaderFile);
