@@ -5,6 +5,7 @@ Shader::Shader(wstring file)
 	: file(file)
 {
 		
+		
 	initialStateBlock = new StateBlock();
 	{
 		DeviceContext->RSGetState(&initialStateBlock->RSRasterizerState);
