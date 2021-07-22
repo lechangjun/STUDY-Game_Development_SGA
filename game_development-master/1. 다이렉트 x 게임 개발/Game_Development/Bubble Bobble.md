@@ -28,6 +28,8 @@ Status: 게임
 클래스 생성 -> CPP, H
 ### * 07 20 -> 정렬
 Scene.cpp  ->  void InitScene() 수정
+### * 07 21 -> 정렬 완료
+### * 07 22 -> Delete Algorithm
 
 # 아직 미완성임 
 
