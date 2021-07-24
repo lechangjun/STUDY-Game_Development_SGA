@@ -7,6 +7,7 @@ Background::Background(wstring shaderFile)
 
 	textureFile = L"../_Textures/PuzzleBobble/Background.png";
 	background = new Sprite(textureFile, shaderFile, 16, 15, 335, 240);
+	
 }
 
 Background::~Background()
