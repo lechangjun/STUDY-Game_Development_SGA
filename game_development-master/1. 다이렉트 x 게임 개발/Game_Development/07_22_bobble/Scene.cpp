@@ -33,6 +33,7 @@ bool BubbleCheck(int y, int x, int color)
 
 	return true;
 }
+
 bool check(int y, int x)
 {
 	if (y < 0 || y > 7 || x < 0 || x > 7) 
