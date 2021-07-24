@@ -7,22 +7,23 @@ Bubble::Bubble(wstring shaderFile, D3DXVECTOR2 start, float angle, float speed, 
 
 	textureFile = L"../_Textures/PuzzleBobble/PuzzleBobble.png";
 
-	color = bubblecolor; //5°¡Áö »ö
+	color = bubblecolor; //5ê°€ì§€ ìƒ‰
+	
 	switch (color)
 	{
-	case 1: //ÆÄ¶õ»ö
+	case 1: //íŒŒëž€ìƒ‰
 		bubble = new Sprite(textureFile, shaderFile, 11, 1187, 28, 1204);
 		break;
-	case 2: //»¡°£»ö
+	case 2: //ë¹¨ê°„ìƒ‰
 		bubble = new Sprite(textureFile, shaderFile, 11, 1214, 28, 1231);
 		break;
-	case 3: //³ë¶õ»ö
+	case 3: //ë…¸ëž€ìƒ‰
 		bubble = new Sprite(textureFile, shaderFile, 11, 1241, 28, 1258);
 		break;
-	case 4: //ÃÊ·Ï»ö
+	case 4: //ì´ˆë¡ìƒ‰
 		bubble = new Sprite(textureFile, shaderFile, 11, 1268, 28, 1285);
 		break;
-	case 5: //º¸¶ó»ö
+	case 5: //ë³´ë¼ìƒ‰
 		bubble = new Sprite(textureFile, shaderFile, 11, 1295, 28, 1312);
 		break;
 	}
@@ -46,12 +47,12 @@ void Bubble::Update(D3DXMATRIX & V, D3DXMATRIX & P)
 {
 	position += velocity;
 
-	if (position.x - bubble->Scale().x / 2 <= 296 || position.x + bubble->Scale().x / 2 >= 714) //¿· º®¿¡ ´ê¾ÒÀ» ¶§
+	if (position.x - bubble->Scale().x / 2 <= 296 || position.x + bubble->Scale().x / 2 >= 714) //ì˜† ë²½ì— ë‹¿ì•˜ì„ ë•Œ
 	{
 		velocity.x += 2.0f * -velocity.x;
 	}
 	//714 - 296 = 418
-	//418 / 8 = 52.25(ÇÑ ÁÙ¿¡ 8°³)
+	//418 / 8 = 52.25(í•œ ì¤„ì— 8ê°œ)
 
 	bubble->Position(position);
 	bubble->Update(V, P);
