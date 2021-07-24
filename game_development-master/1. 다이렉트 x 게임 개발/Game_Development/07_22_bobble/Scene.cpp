@@ -3,29 +3,30 @@
 #include "Objects/Background.h"
 #include "Objects/Bubble.h"
 
-Background* bg; //¹è°æ
-Sprite* mach; //±â°è
-Sprite* aw; //È­»ìÇ¥
-vector<Bubble*>bubbles; //¹ß»ç ¹öºí
+Background* bg; //ë°°ê²½
+Sprite* mach; //ê¸°ê³„
+Sprite* aw; //í™”ì‚´í‘œ
+vector<Bubble*>bubbles; //ë°œì‚¬ ë²„ë¸”
 
-int NextBubble; //´ÙÀ½ ¹öºí
+int NextBubble; //ë‹¤ìŒ ë²„ë¸”
 Sprite* nextbubbles;
-int Next_NextBubble; //´Ù´ÙÀ½ ¹öºí
+int Next_NextBubble; //ë‹¤ë‹¤ìŒ ë²„ë¸”
 Sprite* next_nextbubbles;
 
-//Ãæµ¹ ÆÇÁ¤
-//ÇÑ ÁÙ¿¡ 8°³¾¿ 7ÁÙ
+
+//ì¶©ëŒ íŒì •
+//í•œ ì¤„ì— 8ê°œì”© 7ì¤„
 int line[8][8] = { 0 };
 
 int confirm[8][8] = { 0 };
 
 bool BubbleCheck(int y, int x, int color)
 {
-	if (y > 7 || y < 0 || x > 7 || x < 0) //¹üÀ§
+	if (y > 7 || y < 0 || x > 7 || x < 0) //ë²”ìœ„
 		return false;
-	if (line[y][x] == 0) //¹öºí À¯¹«
+	if (line[y][x] == 0) //ë²„ë¸” ìœ ë¬´
 		return false;
-	if (line[y][x] != color) //»öÀÌ °°ÀºÁö
+	if (line[y][x] != color) //ìƒ‰ì´ ê°™ì€ì§€
 		return false;
 	if (confirm[y][x] == 10) 
 		return false;
@@ -43,62 +44,62 @@ bool check(int y, int x)
 	return true;
 }
 
-//±¸½½ °ãÄ¡´Â°Å ¼öÁ¤
+//êµ¬ìŠ¬ ê²¹ì¹˜ëŠ”ê±° ìˆ˜ì •
 
 void InitScene()
 {
 	wstring shaderFile = L"../_Shaders/008_Sprite.fx";
 
-	bg = new Background(L"../_Shaders/008_Sprite.fx"); //¹è°æ
+	bg = new Background(L"../_Shaders/008_Sprite.fx"); //ë°°ê²½
 
-	//±â°è
+	//ê¸°ê³„
 	mach = new Sprite(L"../_Textures/PuzzleBobble/PuzzleBobble.png", shaderFile, 8, 713, 84, 759);
 	mach->Position(Width/2, 46);
 	mach->Scale(100, 100);
 
-	//È­»ì
+	//í™”ì‚´
 	aw = new Sprite(L"../_Textures/PuzzleBobble/PuzzleBobble.png", shaderFile, 12, 488, 34, 543);
 	aw->Position(Width/2, 76);
 	aw->Scale(50, 125);
 
-	//±¸½½ »ö ·£´ı
+	//êµ¬ìŠ¬ ìƒ‰ ëœë¤
 	NextBubble = Math::Random(0, 99999) % 5 + 1;
 	Next_NextBubble = Math::Random(0, 89999) % 5 + 1;
 
 	switch (NextBubble)
 	{
-	case 1: //ÆÄ¶õ»ö
+	case 1: //íŒŒë€ìƒ‰
 		nextbubbles = new Sprite(L"../_Textures/PuzzleBobble/PuzzleBobble.png", shaderFile, 11, 1187, 28, 1204);
 		break;
-	case 2: //»¡°£»ö			   		   
+	case 2: //ë¹¨ê°„ìƒ‰			   		   
 		nextbubbles = new Sprite(L"../_Textures/PuzzleBobble/PuzzleBobble.png", shaderFile, 11, 1214, 28, 1231);
 		break;
-	case 3: //³ë¶õ»ö			   		   
+	case 3: //ë…¸ë€ìƒ‰			   		   
 		nextbubbles = new Sprite(L"../_Textures/PuzzleBobble/PuzzleBobble.png", shaderFile, 11, 1241, 28, 1258);
 		break;
-	case 4: //ÃÊ·Ï»ö			   		   
+	case 4: //ì´ˆë¡ìƒ‰			   		   
 		nextbubbles = new Sprite(L"../_Textures/PuzzleBobble/PuzzleBobble.png", shaderFile, 11, 1268, 28, 1285);
 		break;
-	case 5: //º¸¶ó»ö			   		   
+	case 5: //ë³´ë¼ìƒ‰			   		   
 		nextbubbles = new Sprite(L"../_Textures/PuzzleBobble/PuzzleBobble.png", shaderFile, 11, 1295, 28, 1312);
 		break;
 	}
 
 	switch (Next_NextBubble)
 	{
-	case 1: //ÆÄ¶õ»ö
+	case 1: //íŒŒë€ìƒ‰
 		next_nextbubbles = new Sprite(L"../_Textures/PuzzleBobble/PuzzleBobble.png", shaderFile, 11, 1187, 28, 1204);
 		break;
-	case 2: //»¡°£»ö			   		   
+	case 2: //ë¹¨ê°„ìƒ‰			   		   
 		next_nextbubbles = new Sprite(L"../_Textures/PuzzleBobble/PuzzleBobble.png", shaderFile, 11, 1214, 28, 1231);
 		break;
-	case 3: //³ë¶õ»ö			   		   
+	case 3: //ë…¸ë€ìƒ‰			   		   
 		next_nextbubbles = new Sprite(L"../_Textures/PuzzleBobble/PuzzleBobble.png", shaderFile, 11, 1241, 28, 1258);
 		break;
-	case 4: //ÃÊ·Ï»ö			   		   
+	case 4: //ì´ˆë¡ìƒ‰			   		   
 		next_nextbubbles = new Sprite(L"../_Textures/PuzzleBobble/PuzzleBobble.png", shaderFile, 11, 1268, 28, 1285);
 		break;
-	case 5: //º¸¶ó»ö			   		   
+	case 5: //ë³´ë¼ìƒ‰			   		   
 		next_nextbubbles = new Sprite(L"../_Textures/PuzzleBobble/PuzzleBobble.png", shaderFile, 11, 1295, 28, 1312);
 		break;
 	}
@@ -128,11 +129,11 @@ void Update()
 	D3DXMatrixOrthoOffCenterLH(&P, 0, (float)Width, 0, (float)Height, -1, 1);
 
 
-	if (bubbles.size() > 2) //»ı¼ºµÈ ¹öºíÀÌ 3°³ ÀÌ»óÀÏ ¶§
+	if (bubbles.size() > 2) //ìƒì„±ëœ ë²„ë¸”ì´ 3ê°œ ì´ìƒì¼ ë•Œ
 	{
-		queue<int> Qy;//Çà
-		queue<int> Qx;//¿­
-		queue<int> Qc;//°³¼ö 
+		queue<int> Qy;//í–‰
+		queue<int> Qx;//ì—´
+		queue<int> Qc;//ê°œìˆ˜ 
 
 		for (int i = 0; i < 8; i++)
 		{
@@ -142,16 +143,16 @@ void Update()
 			}
 		}
 
-		int lastbubble = bubbles.size() - 1; //¸¶Áö¸·¿¡ ½ğ ¹öºí
+		int lastbubble = bubbles.size() - 1; //ë§ˆì§€ë§‰ì— ìœ ë²„ë¸”
 		Qy.push((int)(bubbles[lastbubble]->Location().x)), Qx.push((int)(bubbles[lastbubble]->Location().y)), Qc.push(1);
-		int bubbleColor = bubbles[lastbubble]->Color(); //^¹öºíÀÇ »ö
-		int colorCount = 0; //Ä«¿îÆ®
+		int bubbleColor = bubbles[lastbubble]->Color(); //^ë²„ë¸”ì˜ ìƒ‰
+		int colorCount = 0; //ì¹´ìš´íŠ¸
 
 		while (Qy.empty() == false)
 		{
-			int Py = Qy.front(); Qy.pop(); //ÇöÀç yÁÂÇ¥
-			int Px = Qx.front(); Qx.pop(); //ÇöÀç xÁÂÇ¥
-			int Pc = Qc.front(); Qc.pop(); //ÇöÀç Ä«¿îÆ®
+			int Py = Qy.front(); Qy.pop(); //í˜„ì¬ yì¢Œí‘œ
+			int Px = Qx.front(); Qx.pop(); //í˜„ì¬ xì¢Œí‘œ
+			int Pc = Qc.front(); Qc.pop(); //í˜„ì¬ ì¹´ìš´íŠ¸
 			colorCount = Pc;
 			if (!(Py >= 0 && Py <= 8) || !(Px >= 0 && Px <= 8))
 			{
@@ -159,40 +160,40 @@ void Update()
 				break;
 			}
 			if (confirm[Py][Px] == 10) continue;
-			confirm[Py][Px] = 10;//È®ÀÎ¿ë
+			confirm[Py][Px] = 10;//í™•ì¸ìš©
 
-			//»ó
+			//ìƒ
 			if (BubbleCheck(Py - 1, Px, bubbleColor))
 				Qy.push(Py - 1), Qx.push(Px), Qc.push(Pc + 1);
-			//¿ì
+			//ìš°
 			if (BubbleCheck(Py, Px + 1, bubbleColor))
 				Qy.push(Py), Qx.push(Px + 1), Qc.push(Pc + 1);
-			//ÇÏ
+			//í•˜
 			if (BubbleCheck(Py + 1, Px, bubbleColor))
 				Qy.push(Py + 1), Qx.push(Px), Qc.push(Pc + 1);
-			//ÁÂ
+			//ì¢Œ
 			if (BubbleCheck(Py, Px - 1, bubbleColor))
 				Qy.push(Py), Qx.push(Px - 1), Qc.push(Pc + 1);
 			if (Py % 2 == 1)
 			{
-				//¿ì»ó
+				//ìš°ìƒ
 				if (BubbleCheck(Py - 1, Px + 1, bubbleColor))
 					Qy.push(Py - 1), Qx.push(Px + 1), Qc.push(Pc + 1);
-				//¿ìÇÏ
+				//ìš°í•˜
 				if (BubbleCheck(Py + 1, Px + 1, bubbleColor))
 					Qy.push(Py + 1), Qx.push(Px + 1), Qc.push(Pc + 1);
 			}
 			else
 			{
-				//ÁÂ»ó
+				//ì¢Œìƒ
 				if (BubbleCheck(Py - 1, Px - 1, bubbleColor))
 					Qy.push(Py - 1), Qx.push(Px - 1), Qc.push(Pc + 1);
-				//ÁÂÇÏ
+				//ì¢Œí•˜
 				if (BubbleCheck(Py + 1, Px - 1, bubbleColor))
 					Qy.push(Py + 1), Qx.push(Px - 1), Qc.push(Pc + 1);
 			}
 		}
-		if (colorCount >= 3)//°°Àº»öÀÌ 3°³ ÀÌ»ó
+		if (colorCount >= 3)//ê°™ì€ìƒ‰ì´ 3ê°œ ì´ìƒ
 		{
 			for (int i = 0; i < 8; i++)
 			{
@@ -230,8 +231,8 @@ void Update()
 		//		colorCount = 0;
 		//		while (Qy.empty() == false)
 		//		{
-		//			int cy = Qy.front(); Qy.pop();//cy = ÇöÀçyÁÂÇ¥
-		//			int cx = Qx.front(); Qx.pop();//cx = ÇöÀçxÁÂÇ¥
+		//			int cy = Qy.front(); Qy.pop();//cy = í˜„ì¬yì¢Œí‘œ
+		//			int cx = Qx.front(); Qx.pop();//cx = í˜„ì¬xì¢Œí‘œ
 
 		//			if (cy == 0)
 		//				colorCount = 1;
@@ -241,37 +242,37 @@ void Update()
 		//				break;
 		//			}
 		//			if (confirm[cy][cx] == 10) continue;
-		//			confirm[cy][cx] = 10;//10Àº ¹æ¹®
+		//			confirm[cy][cx] = 10;//10ì€ ë°©ë¬¸
 
-		//			//»ó
+		//			//ìƒ
 		//			if (check(cy - 1, cx))
 		//				Qy.push(cy - 1), Qx.push(cx);
 
-		//			//¿ì
+		//			//ìš°
 		//			if (check(cy, cx + 1))
 		//				Qy.push(cy), Qx.push(cx + 1);
 
-		//			//ÇÏ
+		//			//í•˜
 		//			if (check(cy + 1, cx))
 		//				Qy.push(cy + 1), Qx.push(cx);
-		//			//ÁÂ
+		//			//ì¢Œ
 		//			if (check(cy, cx - 1))
 		//				Qy.push(cy), Qx.push(cx - 1);
 		//			if (cy % 2 == 1)
 		//			{
-		//				//¿ì»ó
+		//				//ìš°ìƒ
 		//				if (check(cy - 1, cx + 1))
 		//					Qy.push(cy - 1), Qx.push(cx + 1);
-		//				//¿ìÇÏ
+		//				//ìš°í•˜
 		//				if (check(cy + 1, cx + 1))
 		//					Qy.push(cy + 1), Qx.push(cx + 1);
 		//			}
 		//			else
 		//			{
-		//				//ÁÂ»ó
+		//				//ì¢Œìƒ
 		//				if (check(cy - 1, cx - 1))
 		//					Qy.push(cy - 1), Qx.push(cx - 1);
-		//				//ÁÂÇÏ
+		//				//ì¢Œí•˜
 		//				if (check(cy + 1, cx - 1))
 		//					Qy.push(cy + 1), Qx.push(cx - 1);
 		//			}
@@ -301,12 +302,12 @@ void Update()
 
 	if (Key->Press(VK_LEFT) && aw->Rotation() < 87.0f)
 		aw->Rotation(aw->Rotation() + 0.05f);
-	//È­»ìÇ¥ È¸Àü(¿ŞÂÊ)
+	//í™”ì‚´í‘œ íšŒì „(ì™¼ìª½)
 	if (Key->Press(VK_RIGHT) && aw->Rotation() > -87.0f)
 		aw->Rotation(aw->Rotation() - 0.05f);
-	//È­»ìÇ¥ È¸Àü(¿À¸¥ÂÊ)
+	//í™”ì‚´í‘œ íšŒì „(ì˜¤ë¥¸ìª½)
 	if (Key->Down(VK_SPACE))
-	{ //¹öºí »ı¼º ¹× ¹ß»ç
+	{ //ë²„ë¸” ìƒì„± ë° ë°œì‚¬
 		wstring file = Shaders + L"008_Sprite.fx";
 
 		float angle = aw->Rotation() + 90;
@@ -318,19 +319,19 @@ void Update()
 
 		switch (NextBubble)
 		{
-		case 1: //ÆÄ¶õ»ö
+		case 1: //íŒŒë€ìƒ‰
 			nextbubbles = new Sprite(L"../_Textures/PuzzleBobble/PuzzleBobble.png", file, 11, 1187, 28, 1204);
 			break;
-		case 2: //»¡°£»ö			   		   
+		case 2: //ë¹¨ê°„ìƒ‰			   		   
 			nextbubbles = new Sprite(L"../_Textures/PuzzleBobble/PuzzleBobble.png", file, 11, 1214, 28, 1231);
 			break;
-		case 3: //³ë¶õ»ö			   		   
+		case 3: //ë…¸ë€ìƒ‰			   		   
 			nextbubbles = new Sprite(L"../_Textures/PuzzleBobble/PuzzleBobble.png", file, 11, 1241, 28, 1258);
 			break;
-		case 4: //ÃÊ·Ï»ö			   		   
+		case 4: //ì´ˆë¡ìƒ‰			   		   
 			nextbubbles = new Sprite(L"../_Textures/PuzzleBobble/PuzzleBobble.png", file, 11, 1268, 28, 1285);
 			break;
-		case 5: //º¸¶ó»ö			   		   
+		case 5: //ë³´ë¼ìƒ‰			   		   
 			nextbubbles = new Sprite(L"../_Textures/PuzzleBobble/PuzzleBobble.png", file, 11, 1295, 28, 1312);
 			break;
 		}
@@ -339,19 +340,19 @@ void Update()
 
 		switch (Next_NextBubble)
 		{
-		case 1: //ÆÄ¶õ»ö
+		case 1: //íŒŒë€ìƒ‰
 			next_nextbubbles = new Sprite(L"../_Textures/PuzzleBobble/PuzzleBobble.png", file, 11, 1187, 28, 1204);
 			break;
-		case 2: //»¡°£»ö			   		   
+		case 2: //ë¹¨ê°„ìƒ‰			   		   
 			next_nextbubbles = new Sprite(L"../_Textures/PuzzleBobble/PuzzleBobble.png", file, 11, 1214, 28, 1231);
 			break;
-		case 3: //³ë¶õ»ö			   		   
+		case 3: //ë…¸ë€ìƒ‰			   		   
 			next_nextbubbles = new Sprite(L"../_Textures/PuzzleBobble/PuzzleBobble.png", file, 11, 1241, 28, 1258);
 			break;
-		case 4: //ÃÊ·Ï»ö			   		   
+		case 4: //ì´ˆë¡ìƒ‰			   		   
 			next_nextbubbles = new Sprite(L"../_Textures/PuzzleBobble/PuzzleBobble.png", file, 11, 1268, 28, 1285);
 			break;
-		case 5: //º¸¶ó»ö			   		   
+		case 5: //ë³´ë¼ìƒ‰			   		   
 			next_nextbubbles = new Sprite(L"../_Textures/PuzzleBobble/PuzzleBobble.png", file, 11, 1295, 28, 1312);
 			break;
 		}
@@ -364,15 +365,15 @@ void Update()
 	//610 558 502 450 398 346
 	for (int i = 0; i < bubbles.size(); i++)
 	{
-		if (bubbles[i]->Position().y + bubbles[i]->Scale().y / 2 >= Height - 106) //1¹øÂ° ÁÙ
+		if (bubbles[i]->Position().y + bubbles[i]->Scale().y / 2 >= Height - 106) //1ë²ˆì§¸ ì¤„
 		{
 			bubbles[i]->Velocity(D3DXVECTOR2(0, 0));
 
 			if (bubbles[i]->Position().x >= 296 && bubbles[i]->Position().x < 348)
 			{
 				bubbles[i]->Position(328, Height - 106);
-				line[0][0] = bubbles[i]->Color(); //0,0¿¡ »ö ÀúÀå
-				bubbles[i]->Location(0, 0); //À§Ä¡ ÀúÀå
+				line[0][0] = bubbles[i]->Color(); //0,0ì— ìƒ‰ ì €ì¥
+				bubbles[i]->Location(0, 0); //ìœ„ì¹˜ ì €ì¥
 			}
 			else if (bubbles[i]->Position().x >= 348 && bubbles[i]->Position().x < 400)
 			{
@@ -418,7 +419,7 @@ void Update()
 			}
 		}
 
-		else if (bubbles[i]->Position().y + bubbles[i]->Scale().y / 2 > Height - (106 + bubbles[i]->Scale().y)) //2¹øÂ° ÁÙ
+		else if (bubbles[i]->Position().y + bubbles[i]->Scale().y / 2 > Height - (106 + bubbles[i]->Scale().y)) //2ë²ˆì§¸ ì¤„
 		{
 			if (bubbles[i]->Position().x >= 296 && bubbles[i]->Position().x < 376 && (line[0][0] || line[0][1] || line[1][1]))
 			{
@@ -471,7 +472,7 @@ void Update()
 			}
 		}
 
-		else if (bubbles[i]->Position().y + bubbles[i]->Scale().y / 2 > Height - (106 + bubbles[i]->Scale().y * 2)) //3¹øÂ° ÁÙ
+		else if (bubbles[i]->Position().y + bubbles[i]->Scale().y / 2 > Height - (106 + bubbles[i]->Scale().y * 2)) //3ë²ˆì§¸ ì¤„
 		{
 			if (bubbles[i]->Position().x >= 296 && bubbles[i]->Position().x < 348 && (line[1][0] || line[2][1]))
 			{
@@ -531,7 +532,7 @@ void Update()
 			}
 		}
 
-		else if (bubbles[i]->Position().y + bubbles[i]->Scale().y / 2 > Height - (106 + bubbles[i]->Scale().y * 3)) //4¹øÂ° ÁÙ
+		else if (bubbles[i]->Position().y + bubbles[i]->Scale().y / 2 > Height - (106 + bubbles[i]->Scale().y * 3)) //4ë²ˆì§¸ ì¤„
 		{
 			if (bubbles[i]->Position().x >= 296 && bubbles[i]->Position().x < 376 && (line[2][0] || line[2][1] || line[3][1]))
 			{
@@ -584,7 +585,7 @@ void Update()
 			}
 		}
 
-		else if (bubbles[i]->Position().y + bubbles[i]->Scale().y / 2 > Height - (106 + bubbles[i]->Scale().y * 4)) //5¹øÂ° ÁÙ
+		else if (bubbles[i]->Position().y + bubbles[i]->Scale().y / 2 > Height - (106 + bubbles[i]->Scale().y * 4)) //5ë²ˆì§¸ ì¤„
 		{
 			if (bubbles[i]->Position().x >= 296 && bubbles[i]->Position().x < 348 && (line[3][0] || line[4][1]))
 			{
@@ -644,7 +645,7 @@ void Update()
 			}
 		}
 
-		else if (bubbles[i]->Position().y + bubbles[i]->Scale().y / 2 > Height - (106 + bubbles[i]->Scale().y * 5)) //6¹øÂ° ÁÙ
+		else if (bubbles[i]->Position().y + bubbles[i]->Scale().y / 2 > Height - (106 + bubbles[i]->Scale().y * 5)) //6ë²ˆì§¸ ì¤„
 		{
 			if (bubbles[i]->Position().x >= 296 && bubbles[i]->Position().x < 376 && (line[4][0] || line[4][1] || line[5][1]))
 			{
@@ -697,7 +698,7 @@ void Update()
 			}
 		}
 
-		else if (bubbles[i]->Position().y + bubbles[i]->Scale().y / 2 > Height - (106 + bubbles[i]->Scale().y * 6)) //7¹øÂ° ÁÙ
+		else if (bubbles[i]->Position().y + bubbles[i]->Scale().y / 2 > Height - (106 + bubbles[i]->Scale().y * 6)) //7ë²ˆì§¸ ì¤„
 		{
 			if (bubbles[i]->Position().x >= 296 && bubbles[i]->Position().x < 346 && (line[5][0] || line[6][1]))
 			{
@@ -756,7 +757,7 @@ void Update()
 				bubbles[i]->Location(6, 7);
 			}
 		}
-		else if (bubbles[i]->Position().y + bubbles[i]->Scale().y / 2 > Height - (106 + bubbles[i]->Scale().y * 7)) //7¹øÂ° ÁÙ ¾Æ·¡
+		else if (bubbles[i]->Position().y + bubbles[i]->Scale().y / 2 > Height - (106 + bubbles[i]->Scale().y * 7)) //7ë²ˆì§¸ ì¤„ ì•„ë˜
 		{
 			if (bubbles[i]->Position().x >= 296 && bubbles[i]->Position().x < 374 && (line[6][0] || line[6][1]))
 			{
@@ -812,8 +813,8 @@ void Render()
 	D3DXCOLOR bgColor = D3DXCOLOR(1, 1, 1, 1);
 	DeviceContext->ClearRenderTargetView(RTV, (float*)bgColor);
 	{
-		//»ı¼º ¼ø¼­
-		//¹è°æ->ÀåÄ¡->È­»ìÇ¥->¹öºí
+		//ìƒì„± ìˆœì„œ
+		//ë°°ê²½->ì¥ì¹˜->í™”ì‚´í‘œ->ë²„ë¸”
 		bg->Render();
 		mach->Render();
 		aw->Render();
