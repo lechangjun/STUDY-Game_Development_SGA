@@ -3,6 +3,7 @@
 class Bubble
 {
 public:
+	
 	Bubble(wstring shaderFile, D3DXVECTOR2 start, float angle, float speed, int bubblecolor);
 	~Bubble();
 
