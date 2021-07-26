@@ -1,6 +1,8 @@
 #include "stdafx.h"
 #include "Sprite.h"
 
+
+
 //-----------------------------------------------------------------------------
 // Sprite
 //-----------------------------------------------------------------------------
@@ -23,7 +25,7 @@ void Sprite::Initialize(wstring spriteFile, wstring shaderFile, float startX, fl
 {
 	textureFile = spriteFile;
 
-	radian = Math::ToRadian(0.0f); //È¸Àü°ª 0À¸·Î ÃÊ±âÈ­
+	radian = Math::ToRadian(0.0f); //ÃˆÂ¸Ã€Ã¼Â°Âª 0Ã€Â¸Â·ÃŽ ÃƒÃŠÂ±Ã¢ÃˆÂ­
 
 	shader = new Shader(shaderFile);
 	srv = Sprites::Load(spriteFile);
