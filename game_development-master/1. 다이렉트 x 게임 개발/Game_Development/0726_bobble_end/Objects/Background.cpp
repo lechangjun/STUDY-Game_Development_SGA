@@ -1,6 +1,8 @@
 #include "stdafx.h"
 #include "Background.h"
 
+
+
 Background::Background(wstring shaderFile)
 {
 	wstring textureFile = L"";
