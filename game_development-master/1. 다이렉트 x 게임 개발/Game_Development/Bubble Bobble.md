@@ -31,6 +31,7 @@ Scene.cpp  ->  void InitScene() 수정
 ### * 07 21 -> 정렬 완료
 ### * 07 22 -> Delete Algorithm
 ### * 07 24 -> Delete
+### * 07 26 -> END
 
 # 아직 미완성임 
 
