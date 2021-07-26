@@ -6,6 +6,7 @@
 //-----------------------------------------------------------------------------
 // Sprite
 //-----------------------------------------------------------------------------
+
 Sprite::Sprite(wstring textureFile, wstring shaderFile)
 {
 	Initialize(textureFile, shaderFile, 0, 0, 0, 0);
