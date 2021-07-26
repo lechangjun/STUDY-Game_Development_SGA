@@ -3,6 +3,8 @@
 
 
 
+
+
 Background::Background(wstring shaderFile)
 {
 	wstring textureFile = L"";
