@@ -2,6 +2,7 @@
 
 class Rect
 {
+	
 public:
 	Rect(wstring shaderFile);
 	Rect(wstring shaderFile, D3DXVECTOR2 position, D3DXVECTOR2 scale, D3DXCOLOR color = D3DXCOLOR(1, 1, 1, 1));
