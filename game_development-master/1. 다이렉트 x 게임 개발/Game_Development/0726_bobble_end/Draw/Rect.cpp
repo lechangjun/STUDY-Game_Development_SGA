@@ -1,6 +1,8 @@
 #include "stdafx.h"
 #include "Rect.h"
 
+
+
 Rect::Rect(wstring shaderFile)
 	:position(0,0),scale(1,1),color(1,1,1,1)
 {
