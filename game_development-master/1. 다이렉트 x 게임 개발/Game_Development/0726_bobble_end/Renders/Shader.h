@@ -2,6 +2,7 @@
 
 class Shader
 {
+	
 public:
 	friend struct Pass;
 
