@@ -15,7 +15,7 @@
 ---------------
 
 
-## SGA  PORTFOLIO (2021.04.19 ~~ 2021.11.30)
+## SGA  PORTFOLIO (2021.04.19 ~~ 2021.09)
 PORTFOLIO 정리한    Git_Hub 주소 
 
 * [다이렉트 x 게임 개발](https://github.com/lechangjun/game_collection)
